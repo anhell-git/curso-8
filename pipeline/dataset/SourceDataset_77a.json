@@ -1,0 +1,33 @@
+{
+	"name": "SourceDataset_77a",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedServiceV2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "transactions.txt",
+				"folderPath": "data",
+				"container": "adf-datav2"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "tdate",
+				"type": "String"
+			},
+			{
+				"name": "amount",
+				"type": "String"
+			}
+		]
+	}
+}
