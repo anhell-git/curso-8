@@ -5,12 +5,6 @@
 		"factoryName": {
 			"value": "datafctryv2"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"value": ""
-		},
-		"AzureBlobStorage2_connectionString": {
-			"value": ""
-		},
 		"AzureSqlMI1_connectionString": {
 			"value": ""
 		},
