@@ -1,0 +1,88 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedServiceV2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "transactions-txt.json",
+				"folderPath": "data",
+				"container": "adf-datav2"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"properties": {
+					"type": "object",
+					"properties": {
+						"structure": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"type": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"type": {
+							"type": "string"
+						},
+						"linkedServiceName": {
+							"type": "string"
+						},
+						"typeProperties": {
+							"type": "object",
+							"properties": {
+								"folderPath": {
+									"type": "string"
+								},
+								"format": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										},
+										"columnDelimiter": {
+											"type": "string"
+										},
+										"firstRowAsHeader": {
+											"type": "boolean"
+										}
+									}
+								}
+							}
+						},
+						"external": {
+							"type": "boolean"
+						},
+						"availability": {
+							"type": "object",
+							"properties": {
+								"frequency": {
+									"type": "string"
+								},
+								"interval": {
+									"type": "integer"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
