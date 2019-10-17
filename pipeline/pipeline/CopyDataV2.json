@@ -1,0 +1,85 @@
+{
+	"name": "CopyDataV2",
+	"properties": {
+		"description": "Copy Data ADF V2",
+		"activities": [
+			{
+				"name": "Copy_77a",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "adf-datav2/data/transactions.txt"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.transactions"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "SqlMISink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "tdate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "tdate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "amount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "amount",
+									"type": "Decimal"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_77a",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_77a",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
