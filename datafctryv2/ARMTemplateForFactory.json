@@ -366,6 +366,132 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/JsonLab3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LinkedServiceV2",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "gamedata",
+						"container": "adf-datav2"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"properties": {
+							"type": "object",
+							"properties": {
+								"structure": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"type": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"published": {
+									"type": "boolean"
+								},
+								"type": {
+									"type": "string"
+								},
+								"linkedServiceName": {
+									"type": "string"
+								},
+								"typeProperties": {
+									"type": "object",
+									"properties": {
+										"folderPath": {
+											"type": "string"
+										},
+										"fileName": {
+											"type": "string"
+										},
+										"format": {
+											"type": "object",
+											"properties": {
+												"type": {
+													"type": "string"
+												},
+												"columnDelimiter": {
+													"type": "string"
+												},
+												"firstRowAsHeader": {
+													"type": "boolean"
+												}
+											}
+										},
+										"partitionedBy": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"name": {
+														"type": "string"
+													},
+													"value": {
+														"type": "object",
+														"properties": {
+															"type": {
+																"type": "string"
+															},
+															"date": {
+																"type": "string"
+															},
+															"format": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"availability": {
+									"type": "object",
+									"properties": {
+										"frequency": {
+											"type": "string"
+										},
+										"interval": {
+											"type": "integer"
+										}
+									}
+								},
+								"external": {
+									"type": "boolean"
+								},
+								"policy": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LinkedServiceV2')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SourceDataset_77a')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
