@@ -24,7 +24,7 @@
 			{
 				"name": "points",
 				"type": "int",
-				"precision": 10
+				"precision": 100
 			}
 		],
 		"typeProperties": {
