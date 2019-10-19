@@ -1,0 +1,35 @@
+{
+	"name": "AzureSqlMITable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlMI1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "player",
+				"type": "varchar"
+			},
+			{
+				"name": "time",
+				"type": "varchar"
+			},
+			{
+				"name": "points",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "points"
+		}
+	}
+}
