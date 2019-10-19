@@ -24,12 +24,15 @@
 			{
 				"name": "points",
 				"type": "int",
-				"precision": 100
+				"precision": 10
 			}
 		],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "points"
+			"tableName": "dbo.points"
+		},
+		"availability": {
+			"frequency": "Day",
+			"interval": 1
 		}
 	}
 }
