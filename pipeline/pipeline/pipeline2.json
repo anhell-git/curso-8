@@ -26,7 +26,107 @@
 					"sink": {
 						"type": "SqlMISink"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['structure'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['structure'][0]['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['linkedServiceName']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['folderPath']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['fileName']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['format']['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['format']['columnDelimiter']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['format']['firstRowAsHeader']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['partitionedBy'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['partitionedBy'][0]['value']['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['partitionedBy'][0]['value']['date']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['typeProperties']['partitionedBy'][0]['value']['format']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['availability']['frequency']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['availability']['interval']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['external']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['properties']['policy']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
