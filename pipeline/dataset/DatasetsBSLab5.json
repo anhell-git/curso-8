@@ -1,0 +1,27 @@
+{
+	"name": "DatasetsBSLab5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedServiceBSlab5",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "01.txt",
+				"folderPath": "sales/2016/01",
+				"container": "lab5"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
